@@ -1,6 +1,7 @@
 # Welcome to MkDocs
 
 ПРИВЕТ БРО
+<img src="https://images.steamusercontent.com/ugc/1838053174474584991/9E5C94A5345D4EAE5BF62C1A2AB94AA0843EE2AE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Смешная гифка">
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Commands
