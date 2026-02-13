@@ -1,1 +1,3 @@
 site_name: Ягодный саверен
+theme:
+  name: dracula
