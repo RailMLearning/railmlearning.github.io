@@ -1,0 +1,30 @@
+header,
+footer,
+.search-box,
+.row-preview {
+  display: none !important;
+}
+
+body > main > .content {
+  padding-top: 1.5rem;
+}
+
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.profile-photo {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.profile-text p {
+  margin-bottom: 0.75rem;
+}

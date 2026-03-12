@@ -1,0 +1,11 @@
+site_name: Моё портфолио
+docs_dir: source/docs
+site_dir: docs
+theme:
+  name: dracula
+nav:
+  - Главная: index.md
+  - О авторе: about.md
+  - Лабораторные работы: labs.md
+extra_css:
+  - assets/css/custom.css

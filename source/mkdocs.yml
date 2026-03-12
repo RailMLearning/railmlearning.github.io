@@ -1,7 +1,9 @@
-site_name: Ягодный саверен
+site_name: Моё портфолио
 theme:
  name: dracula
 nav:
  - Главная: index.md
- - О странице: about.md
- - Отчёт по лабораторной №1: lab1-report.md
+ - О авторе: about.md
+ - Лабораторные работы: labs.md
+extra_css:
+ - assets/css/custom.css

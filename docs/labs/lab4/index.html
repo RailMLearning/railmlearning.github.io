@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-        <title>Лабораторная работа №1 - Ягодный саверен</title>
+        <title>Лабораторная работа №4 - Моё портфолио</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +12,15 @@
         
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="../assets/css/darcula-highlight.min.css">
+            <link rel="stylesheet" href="../../assets/css/darcula-highlight.min.css">
 
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../assets/css/dracula-ui.min.css">
-        <link rel="stylesheet" href="../assets/css/mkdocs.min.css">
+        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../assets/css/mkdocs.min.css">
+            <link href="../../assets/css/custom.css" rel="stylesheet">
 
         
-            <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+            <link  rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
         
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
                 <script>hljs.initHighlightingOnLoad();</script>
@@ -44,7 +45,7 @@
 
         <div class="drac-text-center">
             
-                <span class="drac-text drac-line-height drac-text-white">Ягодный саверен</span>
+                <span class="drac-text drac-line-height drac-text-white">Моё портфолио</span>
             
         </div>
 
@@ -66,24 +67,24 @@
         <ul class="mb-5 drac-list drac-list-none">
             
             <li class="drac-box">
-                <a href=".."
+                <a href="../.."
                     class="
                     drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
                     Главная
                 </a>
             </li>
             <li class="drac-box">
-                <a href="../about/"
+                <a href="../../about/"
                     class="
                     drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
-                    О странице
+                    О авторе
                 </a>
             </li>
             <li class="drac-box">
-                <a href="../lab1-report/"
+                <a href="../"
                     class="
                     drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
-                    Отчёт по лабораторной №1
+                    Лабораторные работы
                 </a>
             </li>
         </ul>
@@ -116,7 +117,7 @@
 
                     <!-- block search -->
                     <li class="nav-item"><div role="search" class="search-box">
-	<form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+	<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
 		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
 		placeholder="Search docs" title="Type search term here" />
 	</form>
@@ -141,48 +142,13 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h1 id="no1">Лабораторная работа №1</h1>
+        <p><h1 id="no4">Лабораторная работа №4</h1>
 <h2 id="_1">Цель работы</h2>
-<p>Освоить создание статического сайта с использованием MkDocs и публикацию на GitHub Pages.</p>
+<p>Освоить базовые приёмы работы по теме четвёртой лабораторной работы.</p>
 <h2 id="_2">Задание</h2>
-<ul>
-<li>Создать структуру документации проекта.</li>
-<li>Настроить MkDocs (<code>mkdocs.yml</code>, тема, навигация).</li>
-<li>Выполнить сборку в каталог <code>docs</code>.</li>
-<li>Опубликовать сайт через GitHub Pages.</li>
-</ul>
-<h2 id="_3">Ход выполнения</h2>
-<ol>
-<li>Создан репозиторий <code>railmlearning.github.io</code>.</li>
-<li>Инициализирован MkDocs-проект в каталоге <code>source</code>.</li>
-<li>Настроена тема <code>dracula</code> и меню навигации через <code>nav</code>.</li>
-<li>Созданы страницы: главная, об авторе, раздел лабораторных, страница лабораторной №1, шаблон отчёта.</li>
-<li>Выполнена сборка сайта в <code>docs</code> для публикации GitHub Pages.</li>
-</ol>
-<h2 id="_4">Код и конфигурация</h2>
-<p>Ключевая команда сборки:</p>
-<pre><code class="language-bash">mkdocs build -d ../docs
-</code></pre>
-<p>Фрагмент <code>mkdocs.yml</code>:</p>
-<pre><code class="language-yaml">site_name: Ягодный саверен
-theme:
-  name: dracula
-nav:
-  - Главная: index.md
-  - Об авторе: about.md
-  - Лабораторные работы: labs.md
-  - Лабораторная работа №1: lab1.md
-  - Шаблон отчёта: lab-template.md
-  - Отчёт по лабораторной №1 (ссылки): lab1-report.md
-</code></pre>
-<h2 id="_5">Результат</h2>
-<p>Сформирован и опубликован статический сайт-портфолио на GitHub Pages.</p>
-<ul>
-<li>Репозиторий: https://github.com/railmlearning/railmlearning.github.io</li>
-<li>Сайт: https://railmlearning.github.io/labs/lab1/</li>
-</ul>
-<h2 id="_6">Выводы</h2>
-<p>В ходе работы освоены базовые этапы разработки и публикации статического сайта: структурирование документации, настройка генератора MkDocs и развёртывание на GitHub Pages.</p></p>
+<p>Подготовить страницу отчёта и оформить результаты выполнения.</p>
+<h2 id="_3">Результат</h2>
+<p>Страница готова для заполнения и сдачи.</p></p>
     </article>
 </section>
             <!-- endblock -->
@@ -201,11 +167,11 @@ nav:
 
     </main>
 
-        <script>var base_url = '..';</script>
-        <script src="../assets/js/jquery-3.3.1.slim.min.js"></script>
-        <script src="../assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../assets/js/mkdocs.js"></script>
-			<script src="../search/main.js" defer></script>
+        <script>var base_url = '../..';</script>
+        <script src="../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../assets/js/mkdocs.js"></script>
+			<script src="../../search/main.js" defer></script>
 
 </body>
 
