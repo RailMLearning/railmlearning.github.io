@@ -1,3 +1,7 @@
 site_name: Ягодный саверен
 theme:
-  name: dracula
+ name: dracula
+nav:
+ - Главная: index.md
+ - О странице: about.md
+ - Отчёт по лабораторной №1: lab1-report.md
