@@ -1,9 +1,7 @@
-name: build-mkdocs-site
-
 on:
   push:
     branches:
-      - main  # или master, в зависимости от твоей главной ветки
+      - main
 
 jobs:
   build-site:
@@ -18,20 +16,19 @@ jobs:
           python-version: '3.x'
 
       - name: Install MkDocs
-        run: pip install mkdocs
+        run: pip install mkdocs mkdocs-material
 
       - name: Build site
         run: mkdocs build
-        
+
       - name: Deploy to Release Branch
         run: |
           git config user.name "CI"
           git config user.email "ci@example.com"
-          git fetch origin
           git checkout -B release
-          # Удаляем все исходники, оставляем только сгенерированный сайт
+          # Копируем содержимое собранного сайта в корень ветки
           mv site/* .
-          rm -rf site/ docs/ mkdocs.yml .sourcecraft/
+          rm -rf site/ docs/ mkdocs.yml .sourcecraft/ .github/
           git add .
-          git commit -m "Deploy site"
+          git commit -m "Deploy static site"
           git push origin release --force
