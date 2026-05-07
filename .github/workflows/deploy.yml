@@ -22,7 +22,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material
+        run: |
+          pip install mkdocs mkdocs-material
+          pip install git+https://github.com/dracula/mkdocs.git
 
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force

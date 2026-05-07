@@ -16,7 +16,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install MkDocs
-        run: pip install mkdocs mkdocs-material
+        run: |
+          pip install mkdocs mkdocs-material
+          pip install git+https://github.com/dracula/mkdocs.git
 
       - name: Build site
         run: mkdocs build
