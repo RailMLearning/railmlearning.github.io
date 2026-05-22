@@ -7,17 +7,6 @@ theme:
 nav:
   - Главная: index.md
   - Об авторе: about.md
-  - Лабораторные работы:
-      - Обзор: labs.md
-      - Лаба 1: labs/lab1.md
-      - Лаба 2: labs/lab2.md
-      - Лаба 3: labs/lab3.md
-      - Лаба 4: labs/lab4.md
-      - Лаба 5: labs/lab5.md
-      - Лаба 6: labs/lab6.md
-      - Лаба 7: labs/lab7.md
-      - Лаба 8: labs/lab8.md
-      - Лаба 9: labs/lab9.md
-      - Лаба 10: labs/lab10.md
+  - Лабораторные работы: labs.md
 extra_css:
   - assets/css/custom.css
