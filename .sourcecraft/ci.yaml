@@ -1,45 +1,28 @@
 on:
   push:
-    branches:
-      - main
+    - workflows: [build-site]
+      filter:
+        branches: ["main"]
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install MkDocs and theme
-        run: |
-          python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-material
-          pip install git+https://github.com/dracula/mkdocs.git
-
-      - name: Build site
-        run: mkdocs build --site-dir _build --clean
-
-      - name: Publish to release branch
-        run: |
-          git config user.name "SourceCraft CI"
-          git config user.email "ci@sourcecraft.dev"
-          git checkout -B release
-          # Удаляем всё, кроме .git и собранного сайта
-          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '_build' -exec rm -rf {} +
-          # Переносим собранный сайт в корень ветки release
-          cp -R _build/. .
-          rm -rf _build
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to deploy"
-          else
-            git commit -m "Automated deploy: ${GITHUB_SHA:-manual}"
-            git push -f origin release
-          fi
+workflows:
+  build-site:
+    tasks:
+      - name: build-and-deploy
+        cubes:
+          - name: mkdocs-deploy
+            image: docker.io/library/python:3.12
+            script:
+              - apt-get update && apt-get install -y git
+              - python -m pip install --upgrade pip
+              - pip install mkdocs mkdocs-material
+              - pip install git+https://github.com/dracula/mkdocs.git
+              - mkdocs build --site-dir _build --clean
+              - git config user.name "SourceCraft CI"
+              - git config user.email "ci@sourcecraft.dev"
+              - git checkout -B release
+              - find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '_build' -exec rm -rf {} +
+              - cp -R _build/. .
+              - rm -rf _build
+              - git add -A
+              - git diff --cached --quiet || git commit -m "Automated deploy"
+              - git push -f origin release
