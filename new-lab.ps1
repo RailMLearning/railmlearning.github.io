@@ -46,12 +46,14 @@ _..._
     Write-Host "Создан $labFile" -ForegroundColor Green
 }
 
-# Добавляем в labs.md, если ещё нет
+# Добавляем в карточный список labs.md, если ещё нет
 $labsIndex = "source/docs/labs.md"
-$line = "- [Лабораторная работа №$Number](labs/lab$Number.md)"
 $content = Get-Content $labsIndex -Raw
-if ($content -notmatch [regex]::Escape("labs/lab$Number.md")) {
-    Add-Content -Path $labsIndex -Value $line -Encoding UTF8
+$itemMarker = "href=""lab$Number/"""
+if ($content -notmatch [regex]::Escape($itemMarker)) {
+    $entry = "  <li><a href=""lab$Number/"">Лабораторная работа №$Number</a></li>"
+    $updated = $content -replace '(?m)^</ul>', "$entry`r`n</ul>"
+    Set-Content -Path $labsIndex -Value $updated -Encoding UTF8 -NoNewline
     Write-Host "Добавлено в labs.md" -ForegroundColor Green
 }
 
